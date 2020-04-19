@@ -133,4 +133,4 @@ STATICFILES_DIRS = (
 
 #  Add configuration for static files storage using whitenoise
 
-ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
+ALLOWED_HOSTS = ['*','127.0.0.1','.herokuapp.com']
