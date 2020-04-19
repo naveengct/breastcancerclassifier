@@ -1,0 +1,28 @@
+{% block page_content %}
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Breast Cancer</title>
+
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<h1>Breast Cancer Classifiction</h1>
+<form action="/predict/" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <label for="img">Enter the image: </label><br><br>
+    <input id="img" type="file" name="img" ><br><br>
+    <input type="submit" value="Submit">
+</form>
+{% if res1 or res2%}
+<h4>Begnin: {{res1}}%</h4>
+<h4>Maligant: {{res2}}%</h4>
+{% endif %}
+</body>
+</html>
+{% endblock %}  
